@@ -49,7 +49,7 @@ function ProtectedRoute({children}: {children: ReactNode}) {
         return <Loader/>
     }
 
-    return isAuthorized ? children : navigate('/')
+    return isAuthorized ? children : navigate('/login')
 
 }
 

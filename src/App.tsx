@@ -5,6 +5,7 @@ import Home from "./pages/Home.tsx";
 import Register from "./pages/Register.tsx";
 import Account from "./pages/Account.tsx";
 import ProtectedRoute from "./components/ProtectedRoute.tsx";
+import Logout from "./pages/Logout.tsx";
 
 
 
@@ -24,9 +25,18 @@ function App() {
               <Route path="/register" element={<Register/>} />
           </Routes>
           <Routes>
-              <Route path="/account" element={<ProtectedRoute>
-                  <Account/>
-              </ProtectedRoute>} />
+              <Route path="/account" element={
+                  <ProtectedRoute>
+                      <Account/>
+                  </ProtectedRoute>
+              } />
+          </Routes>
+          <Routes>
+              <Route path="/logout" element={
+                  <ProtectedRoute>
+                      <Logout />
+                  </ProtectedRoute>
+              } />
           </Routes>
       </Router>
     </>
